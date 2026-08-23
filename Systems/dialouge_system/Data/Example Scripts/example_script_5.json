@@ -1,0 +1,84 @@
+{
+	"tree_id": "collectable_test",
+	"nodes": [
+		{
+			"id": "start",
+			"speaker_name": "Explorer",
+			"content": "How many pebbles have you found?",
+			"next_node_id": null,
+			// Choices are player led, branches are system led. Branches will automatically transition to the next node if their conditions are met, while choices require player input.
+			// if two branches have conditions that are met, the one with the highest priority will be chosen. If they have the same priority, the first one in the list will be chosen.
+			// resolve_branches_after_display is true on default, meaning that branches will be resolved after the node's content is displayed. 
+			// If set to false, branches will be resolved immediately, and the content of the next node will be displayed instead if a branch condition is met.
+			// Valid Conditions
+			// int_less_than
+			// int_greater_than
+			// int_less_or_equal
+			// int_greater_or_equal
+			// bool_equals
+			// int_equals
+			"resolve_branches_after_display": true,
+			"branches": [
+				{
+					"next_node_id": "too_many_response",
+					"priority": 2,
+					"conditions": [
+						{
+							"type": "int_greater_or_equal",
+							"key": "pebbles_count",
+							"value": 15
+						}
+					]
+				},
+				{
+					"next_node_id": "many_response",
+					"priority": 1,
+					"conditions": [
+						{
+							"type": "int_greater_or_equal",
+							"key": "pebbles_count",
+							"value": 5
+						}
+					]
+				},
+				{
+					"next_node_id": "few_response",
+					"priority": 0,
+					"conditions": [
+						{
+							"type": "int_less_than",
+							"key": "pebbles_count",
+							"value": 5
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "few_response",
+			"speaker_name": "Explorer",
+			"content": "Mmmmm how about coming back when you're uh, richer?.",
+			"choices": []
+		},
+		{
+			"id": "many_response",
+			"speaker_name": "Explorer",
+			"content": "Impressive work. You've found most of them!",
+			"choices": []
+		},		
+		{
+			"id": "too_many_response",
+			"speaker_name": "Explorer",
+			"content": "One day your greed will be your downfall young one",
+			"choices": [],
+			"next_node_id": "many_response_2",
+		},
+		{
+			"id": "many_response_2",
+			"speaker_name": "Explorer",
+			"content": "..And nobody will be there to save you",
+			"choices": [],
+			"next_node_id": null
+		}		
+	]
+}

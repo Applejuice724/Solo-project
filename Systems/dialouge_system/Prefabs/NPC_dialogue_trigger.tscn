@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ct3mme7vnlncl"]
+
+[ext_resource type="Script" uid="uid://dsj3jaww6wl1q" path="res://Systems/dialouge_system/Core/npc_dialogue_node_script.gd" id="1_d0vgf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jdt3e"]
+height = 1.6256714
+radius = 2.319336
+
+[node name="NPC_dialogue_trigger" type="Area3D" unique_id=1777138948]
+script = ExtResource("1_d0vgf")
+dialogue_file = "res://Systems/dialouge_system/Data/test_data/test.json"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2109337423]
+transform = Transform3D(2.63, 0, -2.7120998e-07, 0, 2.63, 0, 2.7120998e-07, 0, 2.63, 0, 1.9661489, 0)
+shape = SubResource("CylinderShape3D_jdt3e")
+debug_color = Color(0, 0.5950001, 0.7, 1)

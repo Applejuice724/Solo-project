@@ -1,0 +1,33 @@
+{
+  "tree_id": "bree_intro",
+  "nodes": [
+	{
+	  "id": "multi-dia-1",
+	  "speaker_name": "Diaflowey",
+	  "speaker_icon": "Diaflowey_neutral.png",
+	  "content": "And then I started blasting. But then for some strange reason, the explosion didn't kill me. I just kept on going. Then a horse came out of nowhere and I rode it to safety.",
+	  "next_node_id": null,
+	  "conditions": [],
+	  "actions": [],
+	  "branches": [],
+	  "resolve_branches_after_display": true,
+	  "choices": [],
+	  "events": [
+		{
+		  "type": "sound",
+		  "index": 23,
+		  "audio_path": "res://assets/Audio/sfx/freesound_community-explosion-80108.mp3",
+		  "volume_db": 0.0,
+		  "pitch_scale": 1.0
+		},
+				{
+		  "type": "sound",
+		  "index": 122,
+		  "audio_path": "res://assets/Audio/sfx/dragon-studio-horse-neigh-515279.mp3",
+		  "volume_db": 0.0,
+		  "pitch_scale": 1.0
+		}
+	  ]
+	}
+  ]
+}

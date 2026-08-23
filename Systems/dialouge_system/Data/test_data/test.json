@@ -1,0 +1,103 @@
+{
+  "tree_id": "bree_intro",
+  "nodes": [
+	{
+	  "id": "intro_1",
+	  "speaker_name": "bree",
+	  "speaker_icon": "bree_icon.png",
+	  "content": "press the A button to jump in the air, Press Right Trigger to sprint, walk into plane flat blocks to push them, Press Left Trigger to interact with objects like climbing walls, pull blocks, ziplines and skinny slingshot trees.",
+	  "next_node_id": null,
+	  "choices": [
+		{
+		  "choice_id" : "choice_1",
+		  "display_text": "Tell me about attachments",
+		  "next_node_id": "intro_2",
+		  "is_visible": true
+		},
+		{
+		  "choice_id" : "choice_2",
+		  "display_text": "Tell me about collectibles",
+		  "next_node_id": "intro_3",
+		  "is_visible": true
+		}
+	  ]
+	},
+	{
+	  "id": "intro_2",
+	  "speaker_name": "bree",
+	  "speaker_icon": "bree_icon.png",
+	  "content": "Once you have found and picked up an attachment , Press [X] to bring up your attachment menu then use the Left analog stick, you need the hook attachment for pull blocks, ziplines and slingshot trees, also when using the glider attachment Press [LT] in mid air to glide.",
+	  "next_node_id": "intro_4",
+	  "choices": []
+	},
+	{
+	  "id": "intro_3",
+	  "speaker_name": "bree",
+	  "speaker_icon": "bree_icon.png",
+	  "content": "Collect enough shiny pebbles in each level to open up the path to the next stage.",
+	  "next_node_id": "intro_4",
+	  "choices": []
+	},
+	{
+	  "id": "intro_4",
+	  "speaker_name": "bree",
+	  "speaker_icon": "bree_icon.png",
+	  "content": "In either case I gotta fly off now",
+	  "next_node_id": "intro_5",
+	  "choices": []
+	},
+	{
+	  "id": "intro_5",
+	  "speaker_name": "bree",
+	  "speaker_icon": "bree_icon.png",
+	  "content": "Unless you've got a question for me?",
+	  "next_node_id": null,
+	  "choices": [
+		{
+		  "choice_id" : "choice_1",
+		  "display_text": "No I think I'm good",
+		  "next_node_id": "intro_end",
+		  "is_visible": true
+		},
+		{
+		  "choice_id" : "choice_2",
+		  "display_text": "Why do you like pebbles?",
+		  "next_node_id": "pebble_talk_1",
+		  "is_visible": true
+		}
+	  ]
+	},
+			{
+		  "id": "intro_end",
+		  "speaker_name": "bree",
+		  "speaker_icon": "bree_icon.png",
+		  "content": "Okily Dokily Schmokily Do! Smell ya later!",
+		  "next_node_id": null,
+		  "choices": []
+		},
+		{
+		  "id": "pebble_talk_1",
+		  "speaker_name": "bree",
+		  "speaker_icon": "bree_icon.png",
+		  "content": "Ah now that is a story for another time",
+		  "next_node_id": "pebble_talk_2",
+		  "choices": []
+		},
+		{
+		  "id": "pebble_talk_2",
+		  "speaker_name": "bree",
+		  "speaker_icon": "bree_icon.png",
+		  "content": "........",
+		  "next_node_id": "pebble_talk_3",
+		  "choices": []
+		},
+		{
+		  "id": "pebble_talk_3",
+		  "speaker_name": "bree",
+		  "speaker_icon": "bree_icon.png",
+		  "content": "It's because they are shiny",
+		  "next_node_id": null,
+		  "choices": []
+		}
+  ]
+}

@@ -1,0 +1,51 @@
+{
+	"tree_id": "test_conditions_actions",
+	"nodes": [
+		{
+			"id": "start",
+			"speaker_name": "Tester",
+			"content": "Pick a test.",
+			"next_node_id": null,
+			"choices": [
+				{
+					"choice_id": "give_flag",
+					"display_text": "Enable flag",
+					"next_node_id": "end",
+					"actions": [
+						{
+							"type": "set_bool",
+							"key": "test_flag",
+							"value": true
+						}
+					]
+				},
+				{
+					"choice_id": "locked_choice",
+					"display_text": "This should disappear",
+					"next_node_id": "end",
+					"conditions": [
+						{
+							"type": "bool_equals",
+							"key": "test_flag",
+							"value": true
+						}
+					],
+					"actions": [
+						{
+							"type": "set_bool",
+							"key": "test_flag",
+							"value": false
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "end",
+			"speaker_name": "Tester",
+			"content": "Check results.",
+			"next_node_id": null,
+			"choices": []
+		}
+	]
+}

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cg6c166r4hnrm"]
+
+[ext_resource type="Script" uid="uid://c3d1tseaknln2" path="res://Systems/dialouge_system/UI/node_scripts/example_dialogue_box/player_dialogue_node_script.gd" id="1_kns2c"]
+[ext_resource type="PackedScene" uid="uid://qhnpfgnutyrq" path="res://Systems/dialouge_system/UI/node_scripts/example_dialogue_box/dialouge_box.tscn" id="2_3rrxr"]
+[ext_resource type="Script" uid="uid://c5t2twyqjhat4" path="res://Systems/dialouge_system/dialogue_manager.gd" id="3_3q0p8"]
+
+[node name="dialogue_node" type="Control" unique_id=1055412861 node_paths=PackedStringArray("_dialogue_manager", "_dialogue_box")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kns2c")
+_dialogue_manager = NodePath("Node")
+_dialogue_box = NodePath("dialogue_box")
+
+[node name="dialogue_box" parent="." unique_id=1965349410 instance=ExtResource("2_3rrxr")]
+layout_mode = 0
+
+[node name="Node" type="Node" parent="." unique_id=807349261]
+script = ExtResource("3_3q0p8")

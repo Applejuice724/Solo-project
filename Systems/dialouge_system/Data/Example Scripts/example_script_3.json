@@ -1,0 +1,73 @@
+{
+  "tree_id": "bree_intro",
+  "nodes": 
+	[
+		{
+			"id": "choice-dia-1",
+			"speaker_name": "Diaflowey",
+			"speaker_icon": "Diaflowey_neutral.png",
+			"content": "Choices Are Around The Same As Doing Dialogue Normally",
+			"next_node_id": "choice-dia-2",
+			"choices": []
+		},
+		{
+			"id": "choice-dia-2",
+		  	"speaker_name": "Diaflowey",
+		  	"speaker_icon": "Diaflowey_neutral.png",
+		  	"content": " But Instead of Putting The Next Node In next_node_id You Have To",
+		  	"next_node_id": null,
+		  	"choices": 
+				[
+					{
+					  "choice_id" : "choice-dia-3",
+					  "display_text": "Put Them In The Choices",
+					  "next_node_id": "choice-dia-3",
+					  "is_visible": true
+					},
+					{
+					  "choice_id" : "choice-dia-3",
+					  "display_text": "Like So!",
+					  "next_node_id": "choice-dia-3",
+					  "is_visible": true
+					}
+				]
+			},
+		{
+		  "id": "choice-dia-3",
+		  "speaker_name": "Diaflowey",
+		  "speaker_icon": "Diaflowey_neutral.png",
+		  "content": "Choices Can Lead To The Same Place",
+		  "next_node_id": "choice-dia-2",
+			"choices": [
+				{
+					"choice_id": "choice-dia-4",
+					"display_text": "Or Different Ones!",
+					"next_node_id": "choice-dia-4",
+					"is_visible": true
+				},
+				{
+					"choice_id": "choice-dia-5",
+					"display_text": "Test it out!",
+					"next_node_id": "choice-dia-5",
+					"is_visible": true
+				}
+			]
+		},
+		{
+			"id": "choice-dia-4",
+			"speaker_name": "Diaflowey",
+			"speaker_icon": "Diaflowey_neutral.png",
+			"content": "That Concludes This Example",
+			"next_node_id": null,
+			"choices": []
+		},
+				{
+			"id": "choice-dia-5",
+			"speaker_name": "Diaflowey",
+			"speaker_icon": "Diaflowey_neutral.png",
+			"content": "Example For The Choices Are Finished!",
+			"next_node_id": null,
+			"choices": []
+		},	
+  	]
+}

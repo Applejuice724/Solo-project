@@ -1,0 +1,22 @@
+{
+  "tree_id": "bree_intro",
+  "nodes": 
+	[
+		{
+			"id": "multi-dia-1",
+			"speaker_name": "Diaflowey",
+			"speaker_icon": "Diaflowey_neutral.png",
+			"content": "Put the ID of the next node in the next node variable under content",
+			"next_node_id": "multi-dia-2",
+			"choices": []
+		},
+		{
+			"id": "multi-dia-2",
+			"speaker_name": "Diaflowey",
+			"speaker_icon": "Diaflowey_neutral.png",
+			"content": "That way the node with that ID will be then be played!",
+			"next_node_id": null,
+			"choices": []
+		}
+	]
+}

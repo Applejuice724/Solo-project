@@ -1,0 +1,14 @@
+{
+  "tree_id": "bree_intro",
+  "nodes": 
+	[
+		{
+			"id": "multi-dia-1",
+			"speaker_name": "Diaflowey",
+			"speaker_icon": "Diaflowey_neutral.png",
+			"content": "Shortest Possible Conversation? This Is It",
+			"next_node_id": null,
+			"choices": []
+		}
+	]
+}

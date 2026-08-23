@@ -1,0 +1,19 @@
+How to Set Up the Dialogue System
+1)	Place the `dialogue_system` folder into your project.
+2)	Open:
+	Project → Project Settings → Globals → Autoload
+3)	Add `dialogue_service.gd` as an Autoload.
+4)	Do not change the Autoload name. It must remain:
+	"DialogueService" for it to funciton
+5)	Click "Add" to enable the Autoload.
+6)	The dialogue system is now ready to use.
+
+
+How to setup dialogue for an NPC:
+1) 	Place the "NPC_dialogue_trigger" trigger on a NPC
+2) 	Select the NPC_dialogue_trigger and assign the dialogue .json file to 
+	the Dialogue File variable under Inspector → Dialogue Setup.
+3) Make sure the trigger's Collision Layer and Collision Mask are configured 
+	correctly for the player controller being used. The trigger's Collision Mask 
+	must include the player's Collision Layer.
+4) The trigger is ready to use

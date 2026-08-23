@@ -1,0 +1,56 @@
+{
+	"tree_id": "action_test",
+	"nodes": [
+		{
+			"id": "start",
+			"speaker_name": "Explorer",
+			"content": "",
+			"next_node_id": null,
+			// Actions are little snippets of code that are executed when the node is reached. They can be used to modify the state of the game, set variables, etc.
+			// Here we will initially check a condition and at the end of the node we will change the value of a variable to demonstrate how actions work.
+			"resolve_branches_after_display": false, // Resolve_branches_after_display is false, so that the content of the next node will be displayed immediately if a branch condition is met immediately.
+			"branches": [
+				{
+					"next_node_id": "met_response",				
+					"conditions": [
+						{
+							"type": "bool_equals",
+							"key": "met_explorer",
+							"value": true
+						}
+					]
+				},
+				{
+					"next_node_id": "not_met_response",					
+					"conditions": [
+						{
+							"type": "bool_equals",
+							"key": "met_explorer",
+							"value": false
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "met_response",
+			"speaker_name": "Explorer",
+			"content": "Hey we met before!",
+			"choices": []
+		},
+		{
+			"id": "not_met_response",
+			"speaker_name": "Explorer",
+			"content": "Hello stranger",
+			"choices": [],
+			// Here we set the value of met_explorer to true, so that if the player goes back to the start node, they will get the met_response instead of the not_met_response.
+	  "actions": [
+		{
+		  "type": "set_bool",
+		  "key": "met_explorer",
+		  "value": true
+		}
+	  ]
+		}
+	]
+}

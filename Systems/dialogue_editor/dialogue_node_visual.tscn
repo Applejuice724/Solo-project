@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://fnj8fqwvjt55"]
+
+[ext_resource type="Script" uid="uid://clluhru3bbpd7" path="res://tools/dialogue_editor/dialogue_node_visual.gd" id="1_hu8q0"]
+
+[node name="DialogueNodeVisual" type="GraphNode" unique_id=684677253]
+custom_minimum_size = Vector2(300, 350)
+offset_right = 104.0
+offset_bottom = 125.0
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color(1, 1, 1, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color(1, 1, 1, 1)
+slot/3/right_icon = null
+slot/3/draw_stylebox = true
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color(1, 1, 1, 1)
+slot/4/left_icon = null
+slot/4/right_enabled = false
+slot/4/right_type = 0
+slot/4/right_color = Color(1, 1, 1, 1)
+slot/4/right_icon = null
+slot/4/draw_stylebox = true
+slot/5/left_enabled = false
+slot/5/left_type = 0
+slot/5/left_color = Color(1, 1, 1, 1)
+slot/5/left_icon = null
+slot/5/right_enabled = false
+slot/5/right_type = 0
+slot/5/right_color = Color(1, 1, 1, 1)
+slot/5/right_icon = null
+slot/5/draw_stylebox = true
+script = ExtResource("1_hu8q0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=796972215]
+layout_mode = 2
+
+[node name="Input_node_port_label" type="Label" parent="HBoxContainer" unique_id=834978269]
+layout_mode = 2
+text = "INPUT"
+
+[node name="speaker_name" type="Label" parent="." unique_id=1705530391]
+layout_mode = 2
+text = "speaker name"
+
+[node name="speaker_name_input" type="LineEdit" parent="." unique_id=724063682]
+layout_mode = 2
+
+[node name="content" type="Label" parent="." unique_id=599311046]
+layout_mode = 2
+text = "Content:"
+
+[node name="content_input" type="TextEdit" parent="." unique_id=1829246327]
+layout_mode = 2
+text = "sdadsad"
+placeholder_text = "Type here!"
+wrap_mode = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1624269920]
+layout_mode = 2
+
+[node name="next_node_port_label" type="Label" parent="HBoxContainer2" unique_id=1280695840]
+layout_mode = 2
+text = "NEXT:"
+horizontal_alignment = 2
+
+[node name="OutputResetButton" type="Button" parent="HBoxContainer2" unique_id=2012599542]
+layout_mode = 2
+text = "Reset Conneciton"

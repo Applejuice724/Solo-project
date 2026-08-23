@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites id="2026-08-11" name="report_1" tests="5" failures="0" skipped="0" flaky="0" time="0.000">
+	<testsuite id="0" name="dialogue_manager_ut" package="test/unit_testing/dialogue_system" timestamp="2026-08-11T05:27:32" hostname="localhost" tests="5" failures="0" errors="0" skipped="0" flaky="0" time="0.033">
+		<testcase name="test_has_visited_node" classname="dialogue_manager_ut" time="0.002">
+		</testcase>
+		<testcase name="test_has_not_visited_node" classname="dialogue_manager_ut" time="0.002">
+		</testcase>
+		<testcase name="test_register_dialogue_tree_returns_correct_index" classname="dialogue_manager_ut" time="0.005">
+		</testcase>
+		<testcase name="test_end_dialogue_clears_current_node" classname="dialogue_manager_ut" time="0.005">
+		</testcase>
+		<testcase name="test_if_has_active_dialogue_reports_correctly" classname="dialogue_manager_ut" time="0.006">
+		</testcase>
+	</testsuite>
+</testsuites>
