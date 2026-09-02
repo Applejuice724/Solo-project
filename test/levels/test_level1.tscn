@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://q8m4ucsx3mlb"]
 
+[ext_resource type="PackedScene" uid="uid://c2tx2nlogsdq7" path="res://Systems/ui/example_dialog_prompt.tscn" id="1_i2aus"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/JehenoSimpleFirstPersonController/PlayerCharacter/player_character_scene.tscn" id="1_wagh2"]
 [ext_resource type="PackedScene" uid="uid://ct3mme7vnlncl" path="res://Systems/dialouge_system/Prefabs/NPC_dialogue_trigger.tscn" id="2_p1egk"]
 
@@ -67,6 +68,10 @@ points = PackedVector3Array(-140, -0.5, -40, -140, 0.5, -40, 140, -0.5, -40, -14
 [sub_resource type="BoxMesh" id="BoxMesh_i2aus"]
 
 [node name="Scene" type="Node3D" unique_id=478311238]
+
+[node name="ExampleDialogPrompt" parent="." unique_id=1192122317 instance=ExtResource("1_i2aus")]
+offset_right = 436.0
+offset_bottom = 128.0
 
 [node name="light" type="DirectionalLight3D" parent="." unique_id=742139898]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0)

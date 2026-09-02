@@ -244,7 +244,7 @@ func _set_state_value(key: String, value) -> void:
 func get_state_value(key: String, default_value = null):	
 	# Remove the return entirely and subsitute it to return actual save values
 	# when hooking up to save system
-	return _dialogue_state.get(key, default_value)
+	return get_state_internal_value(key, default_value)
 
 # Internal values, for debugging purposes and unit testing
 func get_state_internal_value(key: String, default_value = null):

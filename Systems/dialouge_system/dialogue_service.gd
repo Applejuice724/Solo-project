@@ -4,8 +4,11 @@ extends Node
 # Signals
 signal dialogue_started(tree_id)
 signal dialogue_finished
+signal dialogue_prompt_started
+signal dialogue_prompt_ended
 # Variables
 var _dialogue_manager: DialogueManager
+var _has_dialogue_active : bool
 
 func _ready() -> void:
 	_dialogue_manager = DialogueManager.new()
@@ -35,8 +38,13 @@ func request_dialogue(dialogue_file: String) -> void:
 	_dialogue_manager.start_dialogue()
 	# print("DialogueService: Dialogue started.")
 	
-func hide_prompt() -> void:
-	pass
+func request_prompt() -> void:	
+	if has_dialogue_active():
+		return		
+	dialogue_prompt_started.emit()	
+	
+func request_hide_prompt() -> void:	
+	dialogue_prompt_ended.emit()
 	
 func _on_dialogue_started() -> void:
 	var tree := _dialogue_manager.get_current_dialogue_tree()
@@ -47,3 +55,7 @@ func _on_dialogue_started() -> void:
 
 func _on_dialogue_finished() -> void:
 	dialogue_finished.emit()
+
+## Getters
+func has_dialogue_active():
+	return _has_dialogue_active

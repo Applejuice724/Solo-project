@@ -129,6 +129,7 @@ grow_vertical = 2
 texture = ExtResource("13_k1f1o")
 
 [node name="PlayerCharacterProperties" type="MarginContainer" parent="HUD" unique_id=2004601024]
+visible = false
 offset_right = 290.0
 offset_bottom = 291.0
 size_flags_horizontal = 0

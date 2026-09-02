@@ -58,16 +58,16 @@ func _ready() -> void:
 
 ## Called when the an object enters the trigger and determines if it is the
 ## player charecter. 
-func _on_body_entered(body: Node3D) -> void:
+func _on_body_entered(body: Node3D) -> void:	
 	if not body.is_in_group("Player"):
 		return
-	_start_dialogue()
+	DialogueService.request_prompt()
 
 ## Called when the player goes out of range of the NPC
 func _on_body_exited(body: Node3D) -> void:
 	if not body.is_in_group("Player"):
 		return
-	DialogueService.hide_prompt()
+	DialogueService.request_hide_prompt()
 	
 
 func _start_dialogue() -> void:
