@@ -24,6 +24,7 @@ signal node_entered(node)
 signal node_exited(node)
 signal dialogue_started()
 signal dialogue_finished()
+signal dialogue_continued()
 
 # == Tree management == #
 ## Sets current dialogue tree

@@ -4,6 +4,7 @@ extends Node
 # Signals
 signal dialogue_started(tree_id)
 signal dialogue_finished
+signal dialogue_continued()
 signal dialogue_prompt_started
 signal dialogue_prompt_ended
 # Variables
@@ -46,12 +47,32 @@ func request_prompt() -> void:
 func request_hide_prompt() -> void:	
 	dialogue_prompt_ended.emit()
 	
+func request_start_conversation() ->void:
+	if _dialogue_manager.has_dialogue_active():
+		push_error("Errror! Dialogue already started, finish current dialogue before starting a new dialogue")		
+		return	
+	
+func request_advance_conversation()->void:
+	if _dialogue_manager.has_dialogue_active():
+		_on_dialogue_continued()		
+	else:
+		push_error("Errror! Dialogue has not started, start a dialogue before continueing new dialogue")		
+	
+	
 func _on_dialogue_started() -> void:
 	var tree := _dialogue_manager.get_current_dialogue_tree()
 	if tree == null:
 		push_error("Dialogue started without a current dialogue tree.")
 		return
 	dialogue_started.emit(tree.get_tree_id())
+	
+func _on_dialogue_continued() ->void:
+	var tree := _dialogue_manager.get_current_dialogue_tree()
+	if tree == null:
+		push_error("Dialogue started without a current dialogue tree.")
+		return
+	_dialogue_manager.continue_dialogue()
+	dialogue_continued.emit(tree)
 
 func _on_dialogue_finished() -> void:
 	dialogue_finished.emit()
