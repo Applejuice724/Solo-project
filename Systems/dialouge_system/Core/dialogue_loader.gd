@@ -56,9 +56,7 @@ func _create_node(node_info: Dictionary) -> DialogueNode:
 		next_node = ""
 	var raw_choices = node_info.get("choices", [])
 	var choices : Array[DialogueChoice] = []
-	# parse conditions and actions
-	var conditions :  Array[DialogueCondition] = _parse_conditions(
-		node_info.get("conditions", []))
+	
 		
 	# If there are any choices, list them. If blank use next_node for next dialogue
 	for choice_dict in raw_choices:
@@ -243,7 +241,7 @@ func _parse_events(raw_events: Array) -> Array[DialogueEvent]:
 		result.append(event)
 	return result
 
-func _parse_event_type(type_str: String) -> int:
+func _parse_event_type(type_str: String) -> DialogueEvent.EventType:
 	match type_str:
 		"sound":
 			return DialogueEvent.EventType.SOUND
