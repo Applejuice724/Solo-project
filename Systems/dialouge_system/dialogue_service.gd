@@ -42,7 +42,7 @@ func request_dialogue(dialogue_file: String) -> void:
 func request_prompt() -> void:	
 	if has_dialogue_active():
 		return		
-	dialogue_prompt_started.emit()	
+	dialogue_prompt_started.emit()
 	
 func request_hide_prompt() -> void:	
 	dialogue_prompt_ended.emit()
@@ -51,6 +51,7 @@ func request_start_conversation() ->void:
 	if _dialogue_manager.has_dialogue_active():
 		push_error("Errror! Dialogue already started, finish current dialogue before starting a new dialogue")		
 		return	
+	print("dialogue started!")
 	
 func request_advance_conversation()->void:
 	if _dialogue_manager.has_dialogue_active():

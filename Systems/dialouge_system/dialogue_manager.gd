@@ -229,7 +229,6 @@ func load_dialogue(file_path : String) -> int:
 func has_visited_node(node_index) -> bool:
 	var node = _current_dialogue_tree.get_node_by_index(node_index)
 	return _current_dialogue_tree.has_visited_node(node.get_id_as_string())	
-	return false
 	
 func has_dialogue_active() -> bool:
 	return _has_active_dialogue
