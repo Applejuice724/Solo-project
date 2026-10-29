@@ -17,3 +17,4 @@ mono_crash.*.json
 .vs/ProjectSettings.json
 .vs/slnx.sqlite
 .vs/Solo-project.slnx/FileContentIndex/5a433f14-fe08-43de-b57a-133f98b0abbb.vsidx
+/.vs
