@@ -1,13 +1,24 @@
 [gd_scene format=3 uid="uid://btkgs03nff41"]
 
+[ext_resource type="Script" uid="uid://docs83h5wicdf" path="res://Systems/ui/example_ui_scripts/example_player_dialogue_input.gd" id="1_iu3je"]
+
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f3jet"]
 width = 128
 height = 128
 
 [node name="ExampleUi" type="PanelContainer" unique_id=827438378]
 visible = false
-offset_right = 285.0
-offset_bottom = 128.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -241.5
+offset_top = -128.0
+offset_right = 241.5
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_iu3je")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1253088588]
 layout_mode = 2
@@ -19,11 +30,11 @@ texture = SubResource("NoiseTexture2D_f3jet")
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1413585951]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1714204063]
+[node name="SpeakerLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1714204063]
 layout_mode = 2
 text = "Name"
 
-[node name="Label" type="Label" parent="HBoxContainer" unique_id=786808434]
+[node name="DialogueLabel" type="Label" parent="HBoxContainer" unique_id=786808434]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 text = " a a a a a a a a a a"
