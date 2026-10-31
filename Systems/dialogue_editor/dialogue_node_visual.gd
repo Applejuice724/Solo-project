@@ -10,6 +10,7 @@ func setup(data : dialogue_node_editor_data):
 	$speaker_name_input.text = data.get_speaker_name()
 	$content_input.text = data.get_content()
 	setup_ports()
+	$speaker_name_input.text_changed.connect(_on_speaker_name_changed)
 	$content_input.text_changed.connect(_on_content_changed)
 	$content_input.scroll_fit_content_height = true
 	print("GraphNode children:", get_child_count())
@@ -34,8 +35,20 @@ func setup_ports():
 	
 
 	
+func _on_speaker_name_changed(new_text: String):
+	editor_data.set_speaker_name(new_text)
+
+
+func sync_data_from_inputs():
+	editor_data.set_speaker_name($speaker_name_input.text)
+	editor_data.set_content($content_input.text)
+
+
 func _on_content_changed():
 	var line_count = $content_input.get_line_count()
 	var line_height = $content_input.get_line_height()
 	$content_input.custom_minimum_size.y = (line_count * line_height + 10)
+	editor_data.set_content($content_input.text)
+	
+	
 	

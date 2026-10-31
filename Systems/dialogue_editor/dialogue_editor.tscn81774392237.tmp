@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://diqfjb4lgo15"]
+
+[ext_resource type="Script" uid="uid://d1xrhgol6d8ka" path="res://Systems/dialogue_editor/dialogue_editor.gd" id="1_nxm2g"]
+
+[node name="DialogueEditor" type="Control" unique_id=795349233]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nxm2g")
+
+[node name="GraphEdit" type="GraphEdit" parent="." unique_id=576452715]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+show_zoom_label = true
+
+[node name="save_button" type="Button" parent="." unique_id=653585276]
+layout_mode = 0
+offset_left = 1768.0
+offset_right = 1920.0
+offset_bottom = 99.0
+text = "Save"

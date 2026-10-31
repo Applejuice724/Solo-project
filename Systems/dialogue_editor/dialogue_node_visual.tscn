@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fnj8fqwvjt55"]
 
-[ext_resource type="Script" uid="uid://clluhru3bbpd7" path="res://tools/dialogue_editor/dialogue_node_visual.gd" id="1_hu8q0"]
+[ext_resource type="Script" uid="uid://clluhru3bbpd7" path="res://Systems/dialogue_editor/dialogue_node_visual.gd" id="1_hu8q0"]
 
 [node name="DialogueNodeVisual" type="GraphNode" unique_id=684677253]
 custom_minimum_size = Vector2(300, 350)
