@@ -4,6 +4,8 @@ extends Node
 ## and provides methods to advance the dialogue via interaction with the ability 
 ## to make choices
 class_name DialogueManager
+signal node_entered(node)
+signal node_exited(node)
 
 # TODO list
 # - Add proper dialogue end handling when next node is invalid/null
@@ -17,14 +19,16 @@ class_name DialogueManager
 var _dialogue_trees : Array[DialogueTree]
 var _current_dialogue_tree : DialogueTree
 var _current_node : DialogueNode
-var _dialogue_state := {"pebbles_count" : 3, "met_explorer" : false}
+var _dialogue_state := {}
 var _has_active_dialogue = false 
+var has_loaded_dialogue_tree = false:
+	get:
+		if _current_dialogue_tree == null:
+			return false
+		else:
+			return true
 # Map "Node_id : boolean"
-signal node_entered(node)
-signal node_exited(node)
-signal dialogue_started()
-signal dialogue_finished()
-signal dialogue_continued()
+
 
 # == Tree management == #
 ## Sets current dialogue tree
@@ -67,9 +71,7 @@ func start_dialogue(start_index: int = 0) -> DialogueNode:
 		push_error("Error current dialogue tree does not exist!")
 		return null
 
-	_has_active_dialogue = true
-	dialogue_started.emit()
-
+	_has_active_dialogue = true	
 	_current_node = _current_dialogue_tree.set_current_node_by_index(start_index)
 	_enter_current_node()
 	return _current_node
@@ -107,6 +109,10 @@ func continue_dialogue() -> void:
 		return
 	change_node(next_node)
 	
+func continue_dialogue_with_choice(choice : DialogueChoice)->void:
+	var next_node = choice.get_next_node_as_index()	
+	change_node(next_node)
+	
 ## For any actions that are needed while leaving the current node
 func _leave_current_node() -> void:
 	if _current_node:
@@ -119,7 +125,7 @@ func end_dialogue() -> void:
 	_current_dialogue_tree = null
 	_current_node = null
 	_has_active_dialogue = false
-	dialogue_finished.emit()
+
 	
 ## For any actions that are needed while leaving the current node
 func _enter_current_node() ->void:

@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 class_name PlayerCharacter
 
+signal interacted(target: Node)
+
 @export_group("Movement variables")
 var move_speed: float
 var move_accel: float
@@ -138,7 +140,9 @@ func build_default_keybinding() -> void:
 		jump_action: [Key.KEY_SPACE],
 		interact_action: [Key.KEY_E],
 	}
-
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(interact_action):
+		_try_interact()
 
 func input_actions_check() -> void:
 	# Check if the input actions are registered in the Input Map.
@@ -166,8 +170,7 @@ func input_actions_check() -> void:
 						"input": input_action,
 						"keys": String(", ").join(key_names)
 					})
-				)
-
+				)								
 				InputMap.add_action(input_action)
 
 				for keycode in default_input_actions[input_action]:
@@ -175,6 +178,16 @@ func input_actions_check() -> void:
 					input_event_key.physical_keycode = keycode
 					InputMap.action_add_event(input_action, input_event_key)
 
+func _try_interact() -> void:
+	if DialogueService.get_if_dialogue_active():
+		if DialogueService.get_if_node_has_choices():
+			var choices = DialogueService.get_current_node_choices()
+			DialogueService.request_dialogue_choice(choices[1])
+		else:
+			DialogueService.request_advance_conversation()
+	else:
+		DialogueService.request_start_conversation()
+	
 
 func _physics_process(_delta: float) -> void:
 	modify_physics_properties()

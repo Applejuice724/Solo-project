@@ -50,8 +50,8 @@ func _ready() -> void:
 	# Double check this is on for everything to work	
 	monitoring = true
 	monitorable = true
-	for child in get_children():
-		print(child.name, " | ", child.get_class())
+	#for child in get_children():
+		#print(child.name, " | ", child.get_class())
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
@@ -61,13 +61,13 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:	
 	if not body.is_in_group("Player"):
 		return
-	DialogueService.request_prompt()
+	DialogueService.request_prompt(self)
 
 ## Called when the player goes out of range of the NPC
 func _on_body_exited(body: Node3D) -> void:
 	if not body.is_in_group("Player"):
 		return
-	DialogueService.request_hide_prompt()
+	DialogueService.request_hide_prompt(self)
 	
 
 func _start_dialogue() -> void:
